@@ -1,33 +1,50 @@
-<nav class="navbar is-fixed-top is-warning">
+<nav class="navbar is-fixed-top is-primary">
     <div class="container">
         <div class="navbar-brand">
             <a class="navbar-logo" href="/">
-                <img src="<?= "$WEBROOT/assets/images/logo.png" ?>" alt="Logo de XVLLMWA">
+                <img src="<?= "$web_root/assets/images/logo.png" ?>" alt="Logo de XVLLMWA">
             </a>
         </div>
         <div id="navbarNav" class="navbar-menu">
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="#"><strong>Start Session</strong></a>
-                    <div class="navbar-dropdown p-2">
-                        <form class="form" method="POST" id="formLogin" action="<?= "$WEBROOT/auth/login.php" ?>">
-                            <div class="field">
-                                <div class="control">
-                                    <input name="username" id="username" class="input" placeholder="User" type="text" required>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
+                        <!-- Mostrar nombre del usuario y opción de Cerrar sesión -->
+                        <a class="navbar-link" href="#"><strong><?= htmlspecialchars($_SESSION['username']) ?></strong></a>
+                        <div class="navbar-dropdown">
+                            <form method="POST" id="form_logout" action="<?= "$web_root/auth/logout.php" ?>">
+                                <div class="field">
+                                    <div class="control">
+                                        <button type="submit" id="btn_logout" class="button is-danger is-fullwidth">Logout</button>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <input name="password" id="password" class="input" placeholder="Password" type="password" required>
+                            </form>
+                        </div>
+                    <?php else: ?>
+                        <!-- Mostrar formulario de inicio de sesión -->
+                        <a class="navbar-link" href="#"><strong>Start Session</strong></a>
+                        <div class="navbar-dropdown">
+                            <form method="POST" id="form_login" action="<?= "$web_root/auth/login.php" ?>">
+                                <div class="field">
+                                    <label class="label" for="username">User</label>
+                                    <div class="control">
+                                        <input name="username" id="username" class="input" placeholder="User" type="text" required>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="field">
-                                <div class="control">
-                                    <button type="submit" id="btnLogin" class="button is-primary is-fullwidth">Login</button>
+                                <div class="field">
+                                    <label class="label" for="password">Password</label>
+                                    <div class="control">
+                                        <input name="password" id="password" class="input" placeholder="Password" type="password" required>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
+                                <div class="field">
+                                    <div class="control">
+                                        <button type="submit" id="btn_login" class="button is-primary is-fullwidth">Login</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

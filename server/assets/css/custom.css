@@ -1,0 +1,22 @@
+:root {
+    --bulma-primary-h: 19deg;
+    --bulma-primary-l: 57%;
+    --bulma-link-h: 261deg;
+    --bulma-link-l: 50%;
+    --bulma-info-h: 273deg;
+    --bulma-info-s: 89%;
+    --bulma-info-l: 65%;
+    --bulma-success-h: 122deg;
+    --bulma-success-s: 100%;
+    --bulma-success-l: 46%;
+    --bulma-warning-h: 39deg;
+    --bulma-warning-l: 71%;
+    --bulma-danger-h: 0deg;
+    --bulma-danger-l: 63%;
+    --bulma-scheme-h: 250;
+    --bulma-family-primary: Hack,Inter,SF Pro,Segoe UI,Roboto,Oxygen,Ubuntu,Helvetica Neue,Helvetica,Arial,sans-serif;
+    --bulma-family-secondary: Hack,Inter,SF Pro,Segoe UI,Roboto,Oxygen,Ubuntu,Helvetica Neue,Helvetica,Arial,sans-serif;
+    --bulma-family-code: Hack,SF Mono,Roboto Mono,Source Code Pro,Ubuntu Mono,monospace;
+  }
+  
+  

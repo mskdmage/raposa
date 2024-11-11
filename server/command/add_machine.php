@@ -18,14 +18,12 @@ if ($stmt->num_rows > 0) {
     $stmt->bind_param('ss', $name, $ip);
     $stmt->execute();
     echo "joined";
-    return;
 } else {
     $insert_query = "INSERT INTO machines (name, ip, last_active) VALUES (?, ?, CURRENT_TIMESTAMP)";
     $stmt = $conn->prepare($insert_query);
     $stmt->bind_param('ss', $name, $ip);
     $stmt->execute();
     echo "joined";
-    return;
 }
 
 $stmt->close();

