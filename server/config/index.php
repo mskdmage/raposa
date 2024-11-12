@@ -1,8 +1,7 @@
 <?php
 session_start();
-require('config/config.php');
+require('./config.php');
 
-// Verificar si el usuario está intentando iniciar sesión
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -41,12 +40,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <title>RAPOSA</title>
     <link href="<?= "$web_root/assets/css/bulma.min.css"; ?>" rel="stylesheet">
     <link href="<?= "$web_root/assets/css/custom.css"; ?>" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
 <?php if (!isset($_SESSION['logged_in'])): ?>
-    <!-- Mostrar solo el formulario de inicio de sesión si el usuario no está logueado -->
     <div class="columns is-centered is-vcentered" style="min-height: 100vh;">
         <div class="column is-one-third">
             <?php if (isset($error_message)): ?>
@@ -76,7 +73,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         </div>
     </div>
 <?php else: ?>
-    <!-- Mostrar el contenido principal si el usuario está logueado -->
     <nav class="navbar is-dark is-fixed-top" role="navigation">
         <div class="navbar-brand">
             <?php require("$document_root/components/header.php"); ?>

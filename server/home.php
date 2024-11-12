@@ -11,15 +11,18 @@ if ($result) {
 }
 ?>
 
-<div class="columns is-multiline">
+<div class="columns is-centered">
     <section class="section">
         <div class="container">
-            <div class="card has-background-dark has-text-centered">
-                <figure class="image is-inline-block">
-                    <img src="<?= "$web_root/assets/images/possum.png"; ?>" alt="Possum">
-                </figure>
+            <div class="card has-background-primary has-text-centered mb-5">
+                <div class="card-content">
+                    <figure class="image is-inline-block">
+                        <img src="<?= "$web_root/assets/images/possum.png"; ?>" alt="Possum">
+                    </figure>
+                    <h1 class="title mt-4">Hosts</h1>
+                </div>
             </div>
-            <h1 class="title has-text-centered">Hosts</h1>
+
             <table class="table is-striped is-hoverable is-fullwidth">
                 <thead>
                     <tr>
@@ -39,10 +42,16 @@ if ($result) {
                         <td><?= htmlspecialchars($machine['name']) ?></td>
                         <td><?= htmlspecialchars($machine['ip']) ?></td>
                         <td>
-                            <a href="/machine?machine=<?= htmlspecialchars($machine['name']); ?>">Control</a>
+                            <a class="button is-info is-small is-light is-outlined" href="/machine?machine=<?= htmlspecialchars($machine['name']); ?>">
+                                <span class="icon"><i class="fas fa-cogs"></i></span>
+                                <span>Control</span>
+                            </a>
                         </td>
                         <td>
-                            <a href="/index.php?id=<?= htmlspecialchars($machine['id']) ?>">💣</a>
+                            <a class="button is-danger is-small is-light is-outlined" href="/index.php?id=<?= htmlspecialchars($machine['id']) ?>" onclick="return confirm('Are you sure you want to delete this machine?');">
+                                <span class="icon"><i class="fas fa-trash"></i></span>
+                                <span>Delete</span>
+                            </a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

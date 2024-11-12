@@ -18,7 +18,6 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $conn->close();
 
     if ($hashed_password && password_verify($password, $hashed_password)) {
-        // Establecer la sesión si las credenciales son válidas
         $_SESSION['logged_in'] = true;
         $_SESSION['username'] = $username;
         header("Location: index.php");
@@ -41,6 +40,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <title>RAPOSA</title>
     <link href="<?= "$web_root/assets/css/bulma.min.css"; ?>" rel="stylesheet">
     <link href="<?= "$web_root/assets/css/custom.css"; ?>" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 

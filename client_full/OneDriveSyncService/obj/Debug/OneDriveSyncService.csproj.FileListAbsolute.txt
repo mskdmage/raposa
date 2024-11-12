@@ -1,0 +1,10 @@
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\bin\Debug\OneDriveSyncService.exe.config
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\bin\Debug\OneDriveSyncService.exe
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\bin\Debug\OneDriveSyncService.pdb
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.csproj.AssemblyReference.cache
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.Form1.resources
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.Properties.Resources.resources
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.csproj.GenerateResource.cache
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.csproj.CoreCompileInputs.cache
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.exe
+C:\Users\user\Projects\raposa\client\OneDriveSyncService\obj\Debug\OneDriveSyncService.pdb

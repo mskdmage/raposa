@@ -3,24 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\join.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:join.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\join.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:join.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\cmd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:cmd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\keylogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:keylogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\screencap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:screencap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\cmd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:cmd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|c:\\users\\user\\projects\\raposa\\client\\onedrivesyncservice\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{669A6015-7730-4752-8E6B-ED96E7B25221}|OneDriveSyncService.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAYwEIAAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAewBwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-09T02:06:01.554Z",
               "IsPinned": true,
@@ -48,7 +56,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "CMD.cs",
               "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\CMD.cs",
               "RelativeDocumentMoniker": "CMD.cs",
@@ -61,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
@@ -73,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -86,15 +94,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Join.cs",
               "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Join.cs",
               "RelativeDocumentMoniker": "Join.cs",
               "ToolTip": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Join.cs",
               "RelativeToolTip": "Join.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-12T03:00:49.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Keylogger.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Keylogger.cs",
+              "RelativeDocumentMoniker": "Keylogger.cs",
+              "ToolTip": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\Keylogger.cs",
+              "RelativeToolTip": "Keylogger.cs",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAewPgAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T02:58:23.346Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ScreenCap.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\ScreenCap.cs",
+              "RelativeDocumentMoniker": "ScreenCap.cs",
+              "ToolTip": "C:\\Users\\user\\Projects\\raposa\\client\\OneDriveSyncService\\ScreenCap.cs",
+              "RelativeToolTip": "ScreenCap.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAjwEgAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T05:12:40.714Z",
               "EditorCaption": ""
             }
           ]

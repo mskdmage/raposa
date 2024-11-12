@@ -9,19 +9,17 @@
             <div class="navbar-end">
                 <div class="navbar-item has-dropdown is-hoverable">
                     <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true): ?>
-                        <!-- Mostrar nombre del usuario y opción de Cerrar sesión -->
                         <a class="navbar-link" href="#"><strong><?= htmlspecialchars($_SESSION['username']) ?></strong></a>
                         <div class="navbar-dropdown">
                             <form method="POST" id="form_logout" action="<?= "$web_root/auth/logout.php" ?>">
                                 <div class="field">
                                     <div class="control">
-                                        <button type="submit" id="btn_logout" class="button is-danger is-fullwidth">Logout</button>
+                                        <button type="submit" id="btn_logout" class="button is-light is-fullwidth">Logout</button>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     <?php else: ?>
-                        <!-- Mostrar formulario de inicio de sesión -->
                         <a class="navbar-link" href="#"><strong>Start Session</strong></a>
                         <div class="navbar-dropdown">
                             <form method="POST" id="form_login" action="<?= "$web_root/auth/login.php" ?>">

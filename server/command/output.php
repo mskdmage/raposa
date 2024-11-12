@@ -1,7 +1,7 @@
 <?php
 require('../config/config.php');
 
-if (!empty($machine) && !empty($returns)) {
+if (!empty($_POST['name']) && !empty($_POST['returns'])) {
     $machine = $_POST['name'];
     $returns = $_POST['returns'];
     $conn = connect_to_db();
